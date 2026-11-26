@@ -5,6 +5,8 @@ Free Pascal 3.2.2で作った完全ネイティブのexeで、サイズは約140
 
 A tiny experimental Windows tool that detects and lists silent segments in MP3/WAV files. Native Free Pascal, ~140 KB. Detection only — no cutting.
 
+**Note for non-Japanese users:** The app UI is in Japanese only. On a Windows PC without Japanese language support, the UI text may display garbled (mojibake). The detection itself works the same. The app also needs ffmpeg.exe, which is not included — see "ffmpegが必要です" below.
+
 ## 使い方
 
 1. 音声ファイルを1つ選ぶ
