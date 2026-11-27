@@ -47,3 +47,34 @@ Windows 11の実機で検出を確認済み：247件・合計758.478秒。
 
 MIT License — Copyright (c) 2026 Fuwatoro Box (TEKIICHIJI)
 詳細は `LICENSE` を見てください。
+
+---
+
+## Rust版
+
+同じ無音検出ミニを Rust で書き直したものです。Delphi版と同じ仕様・同じUI文言です。
+
+- 生の Win32 API を `windows-sys` 経由で直接呼び出しています（フレームワーク不使用）。
+- 外部 ffmpeg を使います（同梱していません）。
+- 検出条件は固定です：-45dB / 1.0秒以上（Delphi版と同じ）。
+
+### サイズ比較
+
+- Delphi版 exe：143,360バイト
+- Rust版 exe：292,864バイト
+
+### 検出結果の一致
+
+Windows 11の実機で、同じファイルで両版の検出結果が一致することを確認済みです：295件・合計1,284.171秒。
+
+### ビルド方法
+
+```sh
+cargo build --release --target x86_64-pc-windows-gnu
+```
+
+ソースは `rust/` フォルダにあります。詳しい記録は `rust/build-report.md` を見てください。
+
+### ダウンロード
+
+Releasesの **v0.2.0** から Rust版のzipをダウンロードしてください。中身はexe 1本だけです。
